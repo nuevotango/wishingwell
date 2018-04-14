@@ -1,0 +1,214 @@
+<div id = "canvas">
+	<div> <p id="welcomeheader"> Hi! I am a Wishing Well</p>
+		  <p id="welcomedesc">You can make a wish and throw a coin at me. I accept coins via the lightning network. You can learn more about me
+		  	<a id ="aboutmelink" href="/about/me">here.</a></p>
+	</div>
+	<p id = "wishesreceived"></p>
+
+	<div id ="payflow">
+		<p id = "step1">1. Make a wish :)</p>
+		<div id="wishdiv">
+			<input id="wish" type="text" maxlength="140"></input>
+			<p id = "charcount">0/140</p>
+			<p id = "next">next</p>
+			<p id = "edit">edit</p>
+			<p id = "done">done</p>
+		</div>
+		<p id="wishtext"></p>
+		<p id = "step2">2. Pick a coin</p>
+		<p id = "bitcoins"></p>
+		<div id="cent" class="coin"> </div>
+		<div id="nickel" class="coin"> </div>
+		<div id="dime" class="coin"> </div>
+		<div id="quarter" class="coin"> </div>
+		<div id="fiftycent" class="coin"> </div>
+		<div id="dollar" class="coin"> </div>
+		<div id = "lightning">
+			<p id="invoicelabel"></p>
+			<input id="invoice"></input>
+			<p id="peerlabel"></p>
+			<input id ="peer"></input>
+			<div id="payqrcode"></div>
+			<div id="peerqrcode"></div>
+			<a id = "lightningwallet" href="https://zap.jackmallers.com/" target="_blank"></a>
+		</div>
+		<p id = "step3">3. Pay with Lightning</p>
+	</div>
+	<div id ="paymentsuccess"> 
+		<p id="received">Wish Received! </br></p>
+		 <p>
+			Working on making it come true ;)</br>
+		    Drop your email below and i'll check-in about this wish </br>sometime in the future. Won't spam you - promise.</p>
+		<input id = "email" type="text" maxlength="50"></input>
+		</br>
+		<p id = "submitemail">Submit Email</p> 
+		<p id = "emailreceived"> </p>
+		<p id="comments">If you have any questions or comments - you can reach me at hello@bitwell.org</p> 
+	</div>
+</div>
+
+<script>
+	$("#invoice").hide();
+	$("#peer").hide();
+	$("#paymentsuccess").hide();
+	$("#peerqrcode").hide();
+	$("#payqrcode").hide();
+	$("#edit").hide();
+	$("#done").hide();
+	$(".coin").hide();
+	$("#step2").hide();
+	$("#step3").hide();
+
+	window.onload = function() {
+
+		getWishCount();
+
+		$( "#wish" ).keyup(function() {
+			var len = $("#wish").val().length;
+			$("#charcount").text(len+"/140");
+		});
+
+		$("#next").click(function(){
+			if ($("#wish").val().length == 0) {
+				alert("Wish cannot be empty");
+				return;
+			}
+			$("#next").hide();
+			$("#wishtext").text($("#wish").val());
+			$("#wish").hide();
+			$("#wishtext").show();
+			$("#edit").show();
+			$("#charcount").hide();
+			$("#step2").show();
+			$(".coin").show();
+		});
+
+		$("#edit").click(function(){
+			$("#edit").hide();
+			$("#wishtext").hide();
+			$("#wish").show();
+			$("#done").show();
+			$("#charcount").show();
+		});
+
+		$("#done").click(function (){
+			$("#edit").show();
+			$("#done").hide();
+			$("#wish").hide();
+			$("#wishtext").text($("#wish").val());
+			$("#wishtext").show();
+			$("#charcount").hide();
+		});
+
+		$("#done").click(function (){
+			$("#edit").show();
+			$("#done").hide();
+			$("#wish").hide();
+			$("#wishtext").text($("#wish").val());
+			$("#wishtext").show();
+			$("#charcount").hide();
+		});
+
+		$("#submitemail").click(function (){
+			var email = $("#email").val();
+			if (!isEmail(email)){
+				alert("Please enter a valid email");
+				return
+			}
+			$.getJSON("/wishes/update_email?email="+email, function(data) {
+				$("#submitemail").hide();
+		    	$("#email").hide();
+		    	$("#emailreceived").text("I'll be in touch!");
+			});
+		});
+
+
+		setupCoins();
+
+
+		function isEmail(email) {
+  			var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  			return regex.test(email);
+		}
+
+		function getWishCount(){
+			$.getJSON("/wishes/get_count", function(data) {
+		    	count = data["count"];
+		    	$("#wishesreceived").text("#"+count+ " wishes received")
+			});
+		}
+
+	    function setupCoins(){
+	        var coins = $(".coin")
+	        for(var i = 0; i < coins.length; i++) {
+	            var denomination = coins[i].id;
+	            coins[i].onclick = function() {
+	                {generateInvoice(this.id)}
+	            }
+	        }
+	    }
+
+		function generateInvoice(coin) {
+			$("#step3").show();
+			var wish = $("#wish").val();
+			//TODO:configure URL according to environment 
+			url = "/wishes/create_invoice?wish="+wish+"&coin="+coin;
+			var values = [];
+
+			convertCoinToBitcoin(coin);
+
+			$.getJSON( url, function( data ) {
+			  $.each( data, function( key, val ) {
+			    values.push(val);
+			  });			 
+			  showinvoice(values);
+  			  checkpayment();
+			});
+		}
+
+		function convertCoinToBitcoin(coin){
+			$(".coin").hide();
+			$("#"+coin).show();
+			$("#"+coin).prop("onclick", null);
+			$("#"+coin).css("margin-left","12%");
+			$("#"+coin).css("margin-top","970px");
+
+			$("#"+coin).css("zoom","28%");
+			$.getJSON("/wishes/convert_coin_to_bitcoins?coin="+coin, function(data) {
+		    	var bitcoins = String((parseFloat(data["bitcoins"]))/100000000);
+		    	$("#bitcoins").text("is equivalent to "+bitcoins+" test Bitcoins");
+		    });
+		}
+
+		function showinvoice(values){
+			$('#invoice').val(values[0]);
+			$('#peer').val(values[1]);
+			$('#invoice').prop("readonly", true);
+			$('#invoice').show();
+			$('#peer').prop("readonly", true);
+			$('#peer').show();
+			$('#payqrcode').qrcode({width: 150,height: 150,text: values[0]});
+			$('#peerqrcode').qrcode({width: 150,height: 150,text: values[1]});
+			$('#invoicelabel').text("Invoice:");
+			$('#peerlabel').text("Peer:");
+			$("#peerqrcode").show();
+			$("#payqrcode").show();
+			$("#lightningwallet").text("Need a Lightning Network wallet?");
+		}
+
+		function checkpayment(){
+			var wish = $("#wish").val()
+			url = "/wishes/check_payment?wish="+wish
+		   	$.getJSON(url, function(data) {
+		    	if (data["settled"] == true){
+		    		$("#paymentsuccess").show();
+		    		$("#payflow").hide();
+		    		$.get("/wishes/save_wish");
+		    	}
+		    	else{
+		    		setTimeout(checkpayment,1000);
+		    	}
+			});
+		}
+	}
+</script>

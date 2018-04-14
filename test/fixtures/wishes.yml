@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wish: MyString
+  coin: MyString
+  payment_hash: MyString
+
+two:
+  wish: MyString
+  coin: MyString
+  payment_hash: MyString

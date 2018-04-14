@@ -1,0 +1,100 @@
+// Place all the styles related to the about controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+   background-image: url("wishingwell.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   min-width: 500px;
+   min-height: 650px;
+
+   p#header {
+    position: absolute;
+    margin-left: 2%;
+    margin-top: 5px;
+    color: white;
+    font-size: 35px;
+   }
+
+   p#p1{
+    position: absolute;
+    margin-left: 2%;
+    margin-top: 60px;
+    color: rgba(125,125,125,1);
+    width: 500px;
+    font-size: 15px;
+   }
+
+   p#faq{
+    position: absolute;
+    margin-left: 2%;
+    margin-top: 170px;
+    color: white;
+    font-size: 20px;
+   }
+
+   p.q{
+    position: absolute;
+    margin-left: 2%;
+    color: white;
+    font-size: 12px;
+   }
+
+   p.a{
+    position: absolute;
+    margin-left: 2%;
+    width: 500px;
+    color: rgba(125,125,125,1);
+    font-size: 12px;
+   }
+
+   a#link{
+    color: rgba(125,125,125,1);
+   }
+
+   p#q1{
+    margin-top: 210px;
+   }
+
+   p#a1{
+    margin-top: 230px;
+   }
+
+   p#q2{
+    margin-top: 280px;
+   }
+
+   p#a2{
+    margin-top: 300px;
+   }
+
+   p#q3{
+    margin-top: 380px;
+   }
+
+   p#a3{
+    margin-top: 400px;
+   }
+
+   p#q4{
+    margin-top: 450px;
+   }
+
+   p#a4{
+    margin-top: 470px;
+   }
+
+   a#home{
+    position: absolute;
+    margin-left: 2%;
+    top: 520px;
+    cursor: pointer;
+    color: rgba(125,125,125,1);
+    font-size: 15px;
+    border: 2px solid gray;
+    border-radius: 6px;
+    padding: 2px;
+    text-decoration: none;
+   }
+}
