@@ -171,7 +171,9 @@ $( document ).ready(function() {
 			$(".coin").hide();
 			$("#"+coin).show();
 			$("#"+coin).prop("onclick", null);
-			$("#"+coin).css("margin-left","12%");
+			$("#"+coin).css("margin-left","4%");
+			$("#"+coin).css("margin-top","170px");
+
 			$.getJSON("/wishes/convert_coin_to_bitcoins?coin="+coin, function(data) {
 		    	var bitcoins = String((parseFloat(data["bitcoins"]))/100000000);
 		    	$("#bitcoins").text("is equivalent to "+bitcoins+" test Bitcoins");
