@@ -1,3 +1,4 @@
+
 <div id = "canvas">
 	<div> <p id="welcomeheader"> Hi! I am a Wishing Well</p>
 		  <p id="welcomedesc">You can make a wish and throw a coin at me. I accept coins via the lightning network. You can learn more about me
@@ -171,9 +172,6 @@ $( document ).ready(function() {
 			$("#"+coin).show();
 			$("#"+coin).prop("onclick", null);
 			$("#"+coin).css("margin-left","12%");
-			$("#"+coin).css("margin-top","970px");
-
-			$("#"+coin).css("zoom","28%");
 			$.getJSON("/wishes/convert_coin_to_bitcoins?coin="+coin, function(data) {
 		    	var bitcoins = String((parseFloat(data["bitcoins"]))/100000000);
 		    	$("#bitcoins").text("is equivalent to "+bitcoins+" test Bitcoins");

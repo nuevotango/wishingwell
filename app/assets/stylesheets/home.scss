@@ -2,340 +2,361 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body{
-     background-color: black;
-   .canvas{
-     background-image: image_url("wishingwell.jpg");
-     background-repeat: no-repeat;
-     left: auto;
-     top: auto;
-    }
-
-   p{
-      font-family: "Arial", Helvetica, sans-serif ;
-   }
-
-   p#welcomeheader {
-    position: absolute;
-    margin-left: 7%;
-    margin-top: 2px;
-    color: white;
-    font-size: 35px;
-    width: 550px;
-   }
-
-   a#aboutmelink{
-    color: rgba(125,125,125,1);
-   }
-
-   p#welcomedesc {
-    position: absolute;
-    width: 550px;
-    margin-left: 7%;
-    margin-top: 60px;
-    color: rgba(125,125,125,1);
-    font-size: 15px;
-   }
-
-   p#wishesreceived{
-    position: fixed;
-    bottom: 0;
-    left: 10px;
-    color: rgba(125,125,125,1);
-    font-size: 15px;
-   }
-
-   p#step1{
-    position: absolute;
-    margin-left: 7%;
-    margin-top: 120px;
-    color: white;
-    font-size: 15px;
-   }
-
-   p#next{
-    position: absolute;
-    left: 200px;
-    top: 30px;
-    cursor: pointer;
-    color: rgba(125,125,125,1);
-    font-size: 15px;
-    border: 2px solid gray;
-    border-radius: 6px;
-    padding: 2px;
-   }
-
-   p#edit{
-    position: absolute;
-    left: 200px;
-    top: 30px;
-    cursor: pointer;
-    color: rgba(125,125,125,1);
-    font-size: 15px;
-    border: 2px solid gray;
-    border-radius: 6px;
-    padding: 2px;
-    }  
-
-   p#done{
-    position: absolute;
-    left: 200px;
-    top: 30px;
-    cursor: pointer;
-    color: rgba(125,125,125,1);
-    font-size: 15px;
-    border: 2px solid gray;
-    border-radius: 6px;
-    padding: 2px;
-   }
-
-
-   div#wishdiv{
-    position: absolute;
-    margin-left: 9%;
-    margin-top: 160px;
-   }
-
-   input#wish {
-    position: absolute;
-   	width: 450px;
-    height: 30px;
-    background-color:rgba(0, 0, 0, 0);
-    color: rgba(125,125,125,1);
-    border: 2px solid gray;
-    border-radius: 6px;
-    font-size: 15px;
-   }
-
-   p#charcount{
-    position: absolute;
-    left: 425px;
-    top: 28px;
-    color: rgba(125,125,125,1);
-    font-size: 10px;
-   }
-
-  p#wishtext{
-    position: absolute;
-    width: 500px;
-    margin-left: 7%;
-    margin-top: 156px;
-    color: rgba(125,125,125,1);
-    font-size: 15px;
-   }
-
-
-  p#step2 {
-    position: absolute;
-    margin-left: 7%;
-    margin-top: 225px;
-    color: white;
-    font-size: 15px;
-   }
-
-  p#bitcoins {
-    position: absolute;
-    margin-left: 19%;
-    margin-top: 280px;
-    color: rgba(125,125,125,1);
-    font-size: 20px;
-  }
-
-  p#step3 {
-    position: absolute;
-    margin-left: 7%;
-    margin-top: 340px;
-    color: white;
-    font-size: 15px;
-   }
-
- div.coin {
-    margin-top: 680px;
-    width:250px;
-    height:250px;
-    zoom: 40%;
-    background-repeat: no-repeat;
-    float:left;
-   }
-
-   div#cent{
-    position: absolute;
-   	background-image: image_url("Penny.png");
-    margin-left: 5%;
-   }
-
-   div#nickel{
-    position: absolute;
-    background-image: image_url("Nickel.png");
-    margin-left: 12%;
-    margin-top: 675px;
-   }
-
-   div#dime{
-    position: absolute;
-    background-image: image_url("Dime.png");
-    margin-left: 19.2%;
-    margin-top: 685px;
-   }
-
-   div#quarter{
-    position: absolute;
-	  background-image: image_url("Quarter.png");
-    margin-left: 25.8%;
-    margin-top: 665px;
-   }
-
-   div#fiftycent{
-    position: absolute;
-	  background-image: image_url("50_cent.png");
-    margin-left: 33.8%;
-    margin-top: 645px;
-
-   }
-
-   div#dollar{
-    position: absolute;
-    background-image: image_image_url("Dollar.png");
-    margin-left: 43.5%;
-    margin-top: 665px;
-   }
-
-   div#lightning{
-    position: absolute;
-    height: 250px;
-    width: 350px;
-    margin-left: 12%;
-    margin-top: 360px;
-   }
-
-   input#invoice {
-    position: absolute;
-    position: top;
-    margin-left: 60px;
-    margin-top: 10px;
-    width: 280px;
-    height: 15px;
-    background-color:rgba(125,125,125,0.5);
-    color: white;
-    border: 2px solid gray;
-    border-radius: 6px;
-    font-size: 10px;
-   }
-
-   input#peer{
-    position: absolute;
-    margin-left: 60px;
-    margin-top: 35px;
-    width: 280px;
-    height: 15px;
-    background-color:rgba(125,125,125,0.5);
-    color: white;
-    border: 2px solid gray;
-    border-radius: 6px;
-    font-size: 10px;
-   }
-
-   p#invoicelabel{
-    position: absolute;
-    margin-left: 10px;
-    margin-top: 15px;
-    color: white;
-    font-size: 12px;
-    font-family: "Times New Roman", Times, serif;
-   }
-
-   p#peerlabel{
-    position: absolute;
-    margin-left: 10px;
-    margin-top: 40px;
-    color: white;
-    font-size: 12px;
-    font-family: "Times New Roman", Times, serif;
-   }
-
-   div#payqrcode {
-    position: absolute;
-    margin-top: 70px;
-    width: 150px;
-    height: 150px;
-    border: 10px solid white;
-   }
-
-  div#peerqrcode {
-    position: absolute;
-    margin-top: 70px;
-    margin-left: 180px;
-    width: 150px;
-    height: 150px;
-    border: 10px solid white;
-   }
-
-  div#peerqrcode {
-    position: absolute;
-    margin-top: 70px;
-    margin-left: 180px;
-    width: 150px;
-    height: 150px;
-    border: 10px solid white;
-   }
-
-  a#lightningwallet{
-    position: absolute;
-    margin-left: 80px;
-    margin-top: 245px;
-    color: white;
-    font-size: 14px;
-    font-family: "Times New Roman", Times, serif;
-    text-decoration: underline;
-    cursor: pointer;
-   }
-
-  div#paymentsuccess {
-    position: absolute;
-    margin-left: 7%;
-    margin-top: 150px;
-    color: rgba(125,125,125,1);
-    font-size: 15px;
-    font-family: "Arial", Helvetica, sans-serif ;
-   }
-
-  p#received {
-    position: absolute;
-    margin-left: 15%;
-    margin-top: -15px;
-    color: white;
-    font-size: 15px;
-    font-family: "Arial", Helvetica, sans-serif ;
-   }
-
-  input#email {
-    position: absolute;
-    width: 250px;
-    height: 20px;
-    background-color:rgba(0, 0, 0, 0);
-    color: rgba(125,125,125,1);
-    border: 2px solid gray;
-    border-radius: 6px;
-    font-size: 15px;
-   }
-
-   p#submitemail{
-    position: absolute;
-    margin-top: 25px;
-    cursor: pointer;
-    color: rgba(125,125,125,1);
-    font-size: 12px;
-    border: 2px solid gray;
-    border-radius: 6px;
-    padding: 2px;
-   }
-
-   p#comments {
-    position: absolute;
-    margin-top: 60px;
-    color: white;
-    font-size: 15px;
-    font-family: "Arial", Helvetica, sans-serif ;
-   }
-
+html{
+  height: 100%;
 }
+
+body{
+
+   min-height: 100%;
+   background-color: black;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+ }
+
+ div#canvas{
+   position: relative;
+   background-image: image_url("wishingwell.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   min-width: 500px;
+   min-height: 650px;
+   border: 2px solid gray;
+   border-radius: 6px;
+   padding: 2px;
+
+ }
+
+ p#wishesreceived{
+  position: absolute;
+  left: 10px;
+  top: 90%;
+  color: rgba(125,125,125,1);
+  font-size: 15px;
+ }
+
+ p{
+    font-family: "Arial", Helvetica, sans-serif ;
+ }
+
+ p#welcomeheader {
+  position: absolute;
+  margin-left: 7%;
+  margin-top: 2px;
+  color: white;
+  font-size: 35px;
+  width: 550px;
+ }
+
+ a#aboutmelink{
+  color: rgba(125,125,125,1);
+ }
+
+ p#welcomedesc {
+  position: absolute;
+  width: 550px;
+  margin-left: 7%;
+  margin-top: 60px;
+  color: rgba(125,125,125,1);
+  font-size: 15px;
+ }
+
+ p#step1{
+  position: absolute;
+  margin-left: 7%;
+  margin-top: 120px;
+  color: white;
+  font-size: 15px;
+ }
+
+ p#next{
+  position: absolute;
+  left: 200px;
+  top: 30px;
+  cursor: pointer;
+  color: rgba(125,125,125,1);
+  font-size: 15px;
+  border: 2px solid gray;
+  border-radius: 6px;
+  padding: 2px;
+ }
+
+ p#edit{
+  position: absolute;
+  left: 200px;
+  top: 30px;
+  cursor: pointer;
+  color: rgba(125,125,125,1);
+  font-size: 15px;
+  border: 2px solid gray;
+  border-radius: 6px;
+  padding: 2px;
+  }  
+
+ p#done{
+  position: absolute;
+  left: 200px;
+  top: 30px;
+  cursor: pointer;
+  color: rgba(125,125,125,1);
+  font-size: 15px;
+  border: 2px solid gray;
+  border-radius: 6px;
+  padding: 2px;
+ }
+
+
+ div#wishdiv{
+  position: absolute;
+  margin-left: 9%;
+  margin-top: 160px;
+ }
+
+ input#wish {
+  position: absolute;
+ 	width: 450px;
+  height: 30px;
+  background-color:rgba(0, 0, 0, 0);
+  color: rgba(125,125,125,1);
+  border: 2px solid gray;
+  border-radius: 6px;
+  font-size: 15px;
+ }
+
+ p#charcount{
+  position: absolute;
+  left: 425px;
+  top: 28px;
+  color: rgba(125,125,125,1);
+  font-size: 10px;
+ }
+
+p#wishtext{
+  position: absolute;
+  width: 500px;
+  margin-left: 7%;
+  margin-top: 156px;
+  color: rgba(125,125,125,1);
+  font-size: 15px;
+ }
+
+
+p#step2 {
+  position: absolute;
+  margin-left: 7%;
+  margin-top: 225px;
+  color: white;
+  font-size: 15px;
+ }
+
+p#bitcoins {
+  position: absolute;
+  margin-left: 19%;
+  margin-top: 280px;
+  color: rgba(125,125,125,1);
+  font-size: 20px;
+}
+
+p#step3 {
+  position: absolute;
+  margin-left: 7%;
+  margin-top: 340px;
+  color: white;
+  font-size: 15px;
+ }
+
+div.coin {
+  positon: absolute;
+  width:250px;
+  height:250px;
+  margin-top: 220px;
+  background-repeat: no-repeat;
+  -moz-transform: scale(0.4,0.4);
+
+  -ms-transform: scale(0.4,0.4);
+
+  -webkit-transform: scale(0.4,0.4);
+
+  -o-transform: scale(0.4,0.4);
+
+  transform: scale(0.4,0.4);
+  display: flex;
+  flex-direction: row;
+ }
+
+ div#cent{
+  position: absolute;
+ 	background-image: image_url("Penny.png");
+  margin-left: 5%;
+ }
+
+ div#nickel{
+  position: absolute;
+  background-image: image_url("Nickel.png");
+  margin-left: 12%;
+ }
+
+ div#dime{
+  position: absolute;
+  background-image: image_url("Dime.png");
+  margin-left: 19.2%;
+ }
+
+ div#quarter{
+  position: absolute;
+  background-image: image_url("Quarter.png");
+  margin-left: 25.8%;
+ }
+
+ div#fiftycent{
+  position: absolute;
+  background-image: image_url("50_cent.png");
+  margin-left: 33.8%;
+
+ }
+
+ div#dollar{
+  position: absolute;
+  background-image: image_image_url("Dollar.png");
+  margin-left: 43.5%;
+ }
+
+ div#lightning{
+  position: absolute;
+  height: 250px;
+  width: 350px;
+  margin-left: 12%;
+  margin-top: 360px;
+ }
+
+
+ input#invoice {
+  position: absolute;
+  position: top;
+  margin-left: 60px;
+  margin-top: 10px;
+  width: 280px;
+  height: 15px;
+  background-color:rgba(125,125,125,0.5);
+  color: white;
+  border: 2px solid gray;
+  border-radius: 6px;
+  font-size: 10px;
+ }
+
+ input#peer{
+  position: absolute;
+  margin-left: 60px;
+  margin-top: 35px;
+  width: 280px;
+  height: 15px;
+  background-color:rgba(125,125,125,0.5);
+  color: white;
+  border: 2px solid gray;
+  border-radius: 6px;
+  font-size: 10px;
+ }
+
+ p#invoicelabel{
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 15px;
+  color: white;
+  font-size: 12px;
+  font-family: "Times New Roman", Times, serif;
+ }
+
+ p#peerlabel{
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 40px;
+  color: white;
+  font-size: 12px;
+  font-family: "Times New Roman", Times, serif;
+ }
+
+ div#payqrcode {
+  position: absolute;
+  margin-top: 70px;
+  width: 150px;
+  height: 150px;
+  border: 10px solid white;
+ }
+
+div#peerqrcode {
+  position: absolute;
+  margin-top: 70px;
+  margin-left: 180px;
+  width: 150px;
+  height: 150px;
+  border: 10px solid white;
+ }
+
+div#peerqrcode {
+  position: absolute;
+  margin-top: 70px;
+  margin-left: 180px;
+  width: 150px;
+  height: 150px;
+  border: 10px solid white;
+ }
+
+a#lightningwallet{
+  position: absolute;
+  margin-left: 80px;
+  margin-top: 245px;
+  color: white;
+  font-size: 14px;
+  font-family: "Times New Roman", Times, serif;
+  text-decoration: underline;
+  cursor: pointer;
+ }
+
+div#paymentsuccess {
+  position: absolute;
+  margin-left: 7%;
+  margin-top: 150px;
+  color: rgba(125,125,125,1);
+  font-size: 15px;
+  font-family: "Arial", Helvetica, sans-serif ;
+ }
+
+p#received {
+  position: absolute;
+  margin-left: 15%;
+  margin-top: -15px;
+  color: white;
+  font-size: 15px;
+  font-family: "Arial", Helvetica, sans-serif ;
+ }
+
+input#email {
+  position: absolute;
+  width: 250px;
+  height: 20px;
+  background-color:rgba(0, 0, 0, 0);
+  color: rgba(125,125,125,1);
+  border: 2px solid gray;
+  border-radius: 6px;
+  font-size: 15px;
+ }
+
+ p#submitemail{
+  position: absolute;
+  margin-top: 25px;
+  cursor: pointer;
+  color: rgba(125,125,125,1);
+  font-size: 12px;
+  border: 2px solid gray;
+  border-radius: 6px;
+  padding: 2px;
+ }
+
+ p#comments {
+  position: absolute;
+  margin-top: 60px;
+  color: white;
+  font-size: 15px;
+  font-family: "Arial", Helvetica, sans-serif ;
+ }
