@@ -11,6 +11,9 @@
 // about supported directives.
 //
 //= require jquery.min
+//= require jquery.circulate
+//= require jquery.easing.1.2
+//= require jquery.qrcode.min
 //= require_tree .
 //= require rails-ujs
 //= require turbolinks

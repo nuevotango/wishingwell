@@ -115,8 +115,6 @@ body{
 
  p#done{
   position: absolute;
-  left: 200px;
-  top: 30px;
   cursor: pointer;
   color: rgba(125,125,125,1);
   font-size: 15px;
@@ -125,6 +123,19 @@ body{
   padding: 2px;
   background-image: image_url("bg.jpg");
 
+ }
+
+ p#back{
+  position: absolute;
+  left: 195px;
+  top: 150px;
+  cursor: pointer;
+  color: rgba(125,125,125,1);
+  font-size: 15px;
+  border: 1px solid gray;
+  border-radius: 6px;
+  padding: 2px;
+  background-image: image_url("bg.jpg");
  }
 
 
@@ -188,19 +199,6 @@ p#step3 {
   font-size: 15px;
  }
 
- p#back{
-  position: absolute;
-  left: 24.9%;
-  top: 320px;;
-  cursor: pointer;
-  color: rgba(125,125,125,1);
-  font-size: 15px;
-  border: 1px solid gray;
-  border-radius: 6px;
-  padding: 2px;
-  background-image: image_url("bg.jpg");
- }
-
  p#generating {
   position: absolute;
   margin-left: 20%;
@@ -226,6 +224,7 @@ div.coin {
   transform: scale(0.35,0.35);
   display: flex;
   flex-direction: row;
+  cursor: pointer;
  }
 
  div#cent{
@@ -260,12 +259,6 @@ div.coin {
   background-image: image_url("50_cent.png");
   margin-left: 34%;
   margin-top: 205px;
- }
-
- div#dollar{
-  position: absolute;
-  background-image: image_image_url("Dollar.png");
-  margin-left: 43.5%;
  }
 
  div#lightning{
