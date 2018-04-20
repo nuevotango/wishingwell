@@ -12,6 +12,7 @@ body{
    display: flex;
    flex-direction: column;
    justify-content: center;
+   -webkit-text-size-adjust: none;
  }
 
  div#canvas{
