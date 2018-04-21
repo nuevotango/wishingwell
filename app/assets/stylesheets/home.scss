@@ -30,7 +30,7 @@ body{
 
   a#about{
     position: absolute;
-    margin-left: 1%;
+    margin-left: 0.5%;
     top: 15px;
     cursor: pointer;
     color: rgba(250,250,250,1);
@@ -89,7 +89,7 @@ body{
  p#next{
   position: absolute;
   left: 200px;
-  top: 30px;
+  top: 35px;
   cursor: pointer;
   color: rgba(125,125,125,1);
   font-size: 15px;
@@ -102,7 +102,7 @@ body{
  p#edit{
   position: absolute;
   left: 200px;
-  top: 30px;
+  top: 35px;
   cursor: pointer;
   color: rgba(125,125,125,1);
   font-size: 15px;
@@ -114,6 +114,8 @@ body{
   }  
 
  p#done{
+  left: 200px;
+  top: 35px;
   position: absolute;
   cursor: pointer;
   color: rgba(125,125,125,1);
@@ -201,7 +203,7 @@ p#step3 {
 
  p#generating {
   position: absolute;
-  margin-left: 20%;
+  margin-left: 25%;
   margin-top: 340px;
   color: rgba(125,125,125,1);
   font-size: 15px;
