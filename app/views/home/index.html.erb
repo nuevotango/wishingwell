@@ -200,7 +200,7 @@ $( document ).ready(function() {
 		function getWishCount(){
 			$.getJSON("/wishes/get_count", function(data) {
 		    	count = data["count"];
-		    	$("#wishesreceived").text("#"+count+ " wishes received")
+		    	$("#wishesreceived").text("#"+count+ " wishes have been received by BitWell")
 			});
 		}
 
