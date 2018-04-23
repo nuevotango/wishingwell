@@ -231,7 +231,6 @@ $( document ).ready(function() {
 			  });			 
 			  showinvoice(values);
 			  $("#lightning").show();
-  			  checkpayment();
 			});
 		}
 
@@ -280,6 +279,7 @@ $( document ).ready(function() {
 			$("#peerqrcode").show();
 			$("#payqrcode").show();
 			$("#lightningwallet").text("Need a Lightning Network wallet?");
+			checkpayment();
 		}
 
 		function checkpayment(){
