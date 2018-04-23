@@ -1,8 +1,8 @@
 class Wish < ApplicationRecord
 
-	def self.save_wish(wish,coin,r_hash)
+	def self.save_wish(wish_text,coin,r_hash)
 		wish = Wish.new
-		wish.wish = wish
+		wish.wish = wish_text
 		wish.coin = coin
 		wish.payment_hash = r_hash
 		wish.save!
