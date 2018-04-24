@@ -8,7 +8,7 @@ class WishesController < ApplicationController
 	  session[:coin] = params[:coin]
 	  ip = LndInterface.get_machine_ip
 	  lnd_pub_key = LndInterface.get_lnd_info.identity_pubkey
-	  peer_node = lnd_pub_key + ":" + ip
+	  peer_node = lnd_pub_key + "@" + ip + ":9735"
 	  render :json => {"payment_request" => payment_request, "peer" => peer_node}
 	end
 
